@@ -2,11 +2,9 @@
 FROM gradle:8.4.0-jdk17 AS builder
 
 WORKDIR /app
-COPY . .
+COPY ktor-flashcard-backend/ .
 
-RUN chmod +x ./gradlew
 RUN ./gradlew clean build -x test
-
 
 # Etapa 2: imagem final
 FROM eclipse-temurin:17-jdk
