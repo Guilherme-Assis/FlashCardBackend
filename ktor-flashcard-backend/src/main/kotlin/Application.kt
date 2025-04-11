@@ -1,6 +1,7 @@
 package com.example
 
 import io.ktor.serialization.kotlinx.json.*
+import io.ktor.server.plugins.autohead.AutoHeadResponse
 import org.jetbrains.exposed.sql.*
 import org.jetbrains.exposed.sql.transactions.transaction
 import org.jetbrains.exposed.sql.Database
@@ -12,6 +13,7 @@ import org.slf4j.event.Level
 import models.Users
 
 fun Application.module() {
+    install(AutoHeadResponse)
     configureHTTP()
     configureSerialization()
     configureMonitoring()

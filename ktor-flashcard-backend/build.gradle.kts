@@ -1,3 +1,4 @@
+val ktorVersion = "2.3.7"
 
 plugins {
     alias(libs.plugins.kotlin.jvm)
@@ -36,4 +37,5 @@ dependencies {
     implementation("org.jetbrains.exposed:exposed-dao:0.45.0")
     implementation("org.jetbrains.exposed:exposed-jdbc:0.45.0")
     implementation("org.xerial:sqlite-jdbc:3.42.0.0") // driver SQLite
+    implementation("io.ktor:ktor-server-auto-head-response:$ktorVersion")
 }
